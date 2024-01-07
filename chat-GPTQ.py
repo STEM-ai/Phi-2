@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore", category=UserWarning, module='transformers.gen
 
 def load_model_and_tokenizer():
     base_model = "TheBloke/phi-2-GPTQ"
-    peft_model_id = "WillRanger/Phi2-lora-Adapters2"
+    peft_model_id = "STEM-AI-mtl/phi-2-electrical-engineering"
     config = PeftConfig.from_pretrained(peft_model_id, trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained(base_model, device_map="cuda:0",return_dict=True, trust_remote_code=True)
 
