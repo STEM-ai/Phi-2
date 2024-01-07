@@ -58,7 +58,7 @@ print_trainable_parameters(model)
 
 import transformers
 from datasets import load_dataset
-data = load_dataset("WillRanger/Electrical-engineering")
+data = load_dataset("dataset repo")
 
 def merge_columns(example):
     new_example = {
@@ -95,7 +95,7 @@ trainer = transformers.Trainer(
 model.config.use_cache = False  # silence the warnings. Please re-enable for inference!
 trainer.train()
 
-model.push_to_hub("WillRanger/Phi2-lora-Adapters2",
+model.push_to_hub("output repo",
                   use_auth_token=True,
                   commit_message="basic training",
                   private=False)
