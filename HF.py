@@ -44,13 +44,19 @@ def generate(instruction, model, tokenizer):
 
 if __name__ == '__main__':
     model, tokenizer = load_model_and_tokenizer()
-    while True:  
-        instruction = input("Enter your instruction: ")
-        if not instruction:
-            continue   
-        if instruction.lower() in ["exit", "quit", "exit()", "quit()"]:
-            print("Exiting...")
-            break 
-
+    if len(sys.argv) > 1:
+        instruction = sys.argv[1]
         answer = generate(instruction, model, tokenizer)
         print(f'Answer: {answer}')
+    else:
+        print("No instruction provided.")
+    #while True:  
+     #   instruction = input("Enter your instruction: ")
+      #  if not instruction:
+       #     continue   
+        #if instruction.lower() in ["exit", "quit", "exit()", "quit()"]:
+         #   print("Exiting...")
+          #  break 
+
+        #answer = generate(instruction, model, tokenizer)
+        #print(f'Answer: {answer}')
